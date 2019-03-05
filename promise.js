@@ -1,9 +1,6 @@
+// Promises handle asynchronous operations in JavaScript
 let promise = new Promise(function(resolve, reject){
-  if(true) {
-    resolve("Promise returned result");
-  } else {
-    reject(Error("Error returned by promise"));
-  }
+  setTimeout(() => resolve("Result from promise"), 4000);
 });
 
 promise.then(function(result) {
@@ -11,3 +8,5 @@ promise.then(function(result) {
 }).catch(error => {
   console.log("Error", error);
 });
+
+console.log("This will execute before promise result is returned");
